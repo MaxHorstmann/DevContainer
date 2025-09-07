@@ -12,11 +12,12 @@ RUN apt-get update && apt-get install -y \
     lsb-release \
     gnupg \
     jq \
-    && curl -sLS https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | tee /etc/apt/trusted.gpg.d/microsoft.gpg > /dev/null \
-    && echo "deb [arch=amd64] https://packages.microsoft.com/repos/azure-cli/ $(lsb_release -cs) main" | tee /etc/apt/sources.list.d/azure-cli.list \
-    && apt-get update \
-    && apt-get install -y azure-cli \
+    python3-pip \
+    && pip3 install azure-cli \
     && rm -rf /var/lib/apt/lists/*
+
+# Add pip-installed binaries to PATH
+ENV PATH="/home/vscode/.local/bin:$PATH"
 
 # You can add custom tools, configurations, or global packages here
 # For example, install global .NET tools:
