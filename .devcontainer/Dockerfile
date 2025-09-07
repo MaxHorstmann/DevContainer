@@ -6,6 +6,7 @@ RUN apt-get update && apt-get install -y \
     tree \
     htop \
     redis-tools \
+    iputils-ping \
     && rm -rf /var/lib/apt/lists/*
 
 # You can add custom tools, configurations, or global packages here

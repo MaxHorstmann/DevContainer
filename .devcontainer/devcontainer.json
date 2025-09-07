@@ -11,8 +11,8 @@
 		"ghcr.io/devcontainers/features/github-cli:1": {}
 	},
 
-	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [5000, 5001, 8080, 6379],
+		// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [5002, 5003, 8080],
 
 	// Configure tool-specific properties.
 	"customizations": {
