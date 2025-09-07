@@ -48,5 +48,5 @@
 	"postCreateCommand": "dotnet --version && docker --version && redis-cli -h redis ping",
 
 	// Use 'postStartCommand' to run commands after the container starts.
-	"postStartCommand": "echo 'Dev container is ready! 🚀'"
+	"postStartCommand": ".devcontainer/setup-azure-resources.sh && echo 'Dev container is ready! 🚀'"
 }
