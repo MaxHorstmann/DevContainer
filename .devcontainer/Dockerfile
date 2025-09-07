@@ -5,6 +5,7 @@ FROM mcr.microsoft.com/devcontainers/dotnet:1-8.0-jammy
 RUN apt-get update && apt-get install -y \
     tree \
     htop \
+    redis-tools \
     && rm -rf /var/lib/apt/lists/*
 
 # You can add custom tools, configurations, or global packages here

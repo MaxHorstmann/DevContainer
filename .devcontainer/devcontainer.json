@@ -1,8 +1,8 @@
 {
-	"name": "C# .NET 8 Development",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
+	"name": "C# .NET 8 Development with Redis",
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "app",
+	"workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
 	
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	"features": {
@@ -12,7 +12,7 @@
 	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
-	"forwardPorts": [5000, 5001, 8080],
+	"forwardPorts": [5000, 5001, 8080, 6379],
 
 	// Configure tool-specific properties.
 	"customizations": {
@@ -27,7 +27,8 @@
 				"ms-vscode.PowerShell",
 				"bradlc.vscode-tailwindcss",
 				"esbenp.prettier-vscode",
-				"ms-vscode.vscode-typescript-next"
+				"ms-vscode.vscode-typescript-next",
+				"cweijan.vscode-redis-client"
 			],
 			"settings": {
 				"dotnet.server.useOmnisharp": false,
@@ -44,7 +45,7 @@
 	// "remoteUser": "root",
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "dotnet --version && docker --version",
+	"postCreateCommand": "dotnet --version && docker --version && redis-cli -h redis ping",
 
 	// Use 'postStartCommand' to run commands after the container starts.
 	"postStartCommand": "echo 'Dev container is ready! 🚀'"
